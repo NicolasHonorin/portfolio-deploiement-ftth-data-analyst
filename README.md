@@ -10,7 +10,7 @@ Le reporting est figé au **vendredi 2 octobre 2026, semaine 2026-S40**.
 
 ![Page Programme du tableau de bord FTTH](assets/dashboard/02_pbi_programme.png)
 
-**Accès aux livrables :** [rapport PDF](power%20bi/portfolio%20d%C3%A9ploiement%20FTTH.pdf) · [fichier Power BI](power%20bi/portfolio%20d%C3%A9ploiement%20FTTH.pbix) · [notebook Python](python/controle_exploration_ftth.ipynb) · [requêtes SQL](sql/)
+**Accès aux livrables :** [rapport PDF](power%20bi/portfolio_d%C3%A9ploiement_FTTH.pdf) · [fichier Power BI](power%20bi/portfolio_d%C3%A9ploiement_FTTH.pbix) · [notebook Python](python/controle_exploration_ftth.ipynb) · [requêtes SQL](sql/)
 
 ## Résultats clés et enseignements
 
@@ -135,7 +135,7 @@ Les captures ont été réalisées à différentes étapes du projet. Leur séle
 
 ## Reproduire le parcours
 
-1. **Récupérer les fichiers du dépôt.** Pour lire le résultat sans Power BI Desktop, ouvrir le [rapport PDF](power%20bi/portfolio%20d%C3%A9ploiement%20FTTH.pdf).
+1. **Récupérer les fichiers du dépôt.** Pour lire le résultat sans Power BI Desktop, ouvrir le [rapport PDF](power%20bi/portfolio_d%C3%A9ploiement_FTTH.pdf).
 2. **Préparer BigQuery.** Créer depuis l’interface les datasets `portfolio_deploiement_ftth_raw` et `portfolio_deploiement_ftth`, dans la même localisation. Importer `suivi_cables.csv` sous le nom `suivi_cables_raw` et `suivi_boites.csv` sous le nom `suivi_boites_raw` dans le premier dataset. Vérifier les types : dates en `DATE`, semaines ISO et identifiants en `STRING`, valeurs numériques selon leur nature.
 3. **Exécuter les fichiers SQL de 01 à 05.** Examiner les résultats des contrôles avant de poursuivre. Les noms à deux niveaux utilisent le projet BigQuery sélectionné. Les instructions `CREATE OR REPLACE VIEW` remplacent les définitions des vues portant le même nom.
 4. **Exécuter le notebook.** Dans Google Colab, déposer les deux CSV de suivi dans le dossier de session via le panneau Fichiers, puis lancer les cellules dans l’ordre. En local, placer les CSV dans le répertoire de travail du notebook et disposer de `pandas` et `plotly`. Conserver les noms `suivi_cables.csv` et `suivi_boites.csv`.
